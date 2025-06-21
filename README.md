@@ -60,32 +60,23 @@ echo "LLAMA_MODEL_PATH=/full/path/to/your/model.gguf" > .env
 jupyter notebook  # OR run your main app script if applicable
 ```
 
-## Project Structure
-```text
-understandmd/
-├── models/                       # Local LLM model file (.gguf)
-├── notebook.ipynb                # Project code and explanation
-├── understandmd_generated.csv    # Output data (optional)
-├── .env                          # Model path stored here
-├── .gitignore
-└── README.md
-```
-
 ## Notes
-	•	Requires a CPU capable of handling quantized LLM inference (e.g., Apple Silicon)
-	•	Text-to-speech requires macOS-compatible audio handling due to use of .aiff files
-	•	Model runs fully offline and never sends data to the cloud
+
+- Requires a CPU capable of handling quantized LLM inference (e.g., Apple Silicon)
+- Text-to-speech requires macOS-compatible audio handling due to use of `.aiff` files
+- Model runs fully offline and never sends data to the cloud
 
 ## Future Directions
-	•	Add multilingual support
-	•	Improve output evaluation with real users
-	•	Expand dataset coverage
-	•	Enable mobile access or web deployment
+
+- Add multilingual support
+- Improve output evaluation with real users
+- Expand dataset coverage
+- Enable mobile access or web deployment
 
 ## License
 
 This project is for educational and non-commercial use only.
 
-⸻
+---
 
 Built with 💙 by Victoria Blante
