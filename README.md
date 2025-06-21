@@ -60,13 +60,16 @@ echo "LLAMA_MODEL_PATH=/full/path/to/your/model.gguf" > .env
 jupyter notebook  # OR run your main app script if applicable
 ```
 
+## Project Structure
+```text
 understandmd/
-├── models/                  # Local LLM model file (.gguf)
-├── notebook.ipynb          # Project code and explanation
-├── understandmd_generated.csv  # Output data (optional)
-├── .env                    # Model path stored here
+├── models/                       # Local LLM model file (.gguf)
+├── notebook.ipynb                # Project code and explanation
+├── understandmd_generated.csv    # Output data (optional)
+├── .env                          # Model path stored here
 ├── .gitignore
 └── README.md
+```
 
 ## Notes
 	•	Requires a CPU capable of handling quantized LLM inference (e.g., Apple Silicon)
