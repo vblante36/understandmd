@@ -41,24 +41,59 @@ Medical information is often filled with jargon that makes it hard for patients 
 
 ## Setup Instructions
 
+1. **Clone the repo and set up your environment**
+
 ```bash
-# Clone the repo
 git clone https://github.com/your-username/understandmd.git
 cd understandmd
 
 # Create a virtual environment
 python -m venv venv
-source venv/bin/activate  # or .\venv\Scripts\activate on Windows
+source venv/bin/activate  # On Windows use: .\venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
-
-# Create a `.env` file and add your model path
-echo "LLAMA_MODEL_PATH=/full/path/to/your/model.gguf" > .env
-
-# Run the notebook or launch the UI
-jupyter notebook  # OR run your main app script if applicable
 ```
+
+2. **Download the Mistral model (required)**
+
+UnderstandMD uses [Mistral-7B-Instruct](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF), a local instruction-tuned model in GGUF format.
+
+- Visit the [Hugging Face model page](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF)
+- Download a quantized version such as `mistral-7b-instruct-v0.1.Q4_K_M.gguf`
+- Create a `models/` folder and move the model file inside:
+
+```bash
+mkdir models
+mv ~/Downloads/mistral-7b-instruct-v0.1.Q4_K_M.gguf models/
+```
+
+3. **Set your model path**
+
+Create a `.env` file at the root of the project:
+
+```bash
+echo "LLAMA_MODEL_PATH=./models/mistral-7b-instruct-v0.1.Q4_K_M.gguf" > .env
+```
+
+You can also edit `.env` manually if needed.
+
+4. **Run the app**
+
+```bash
+# Open the notebook
+jupyter notebook
+```
+
+Or launch the full UI (if applicable):
+
+```bash
+python understandmd_from_scratch.py
+```
+
+---
+
+This app runs **fully offline** and does **not** require any cloud APIs or paid services.
 
 ## Notes
 
